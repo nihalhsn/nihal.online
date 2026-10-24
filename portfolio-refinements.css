@@ -1,0 +1,406 @@
+/*
+  Portfolio refinements
+  Keep shared visual decisions here so future adjustments stay consistent.
+  Core palette is inherited from index.html: --bg-dark, --bg-card, --primary, --secondary.
+*/
+:root {
+  --content-width: 1180px;
+  --section-gutter: clamp(22px, 6.5vw, 92px);
+  --section-space: clamp(68px, 7.5vw, 100px);
+  --card-radius: 12px;
+  --border-subtle: rgba(160, 185, 210, .15);
+  --copy-muted: #a0aebe;
+}
+html { scroll-padding-top: 88px; }
+body { text-rendering: optimizeLegibility; }
+.navbar { backdrop-filter: blur(8px); }
+.nav-links a:hover, .nav-links a.active { text-shadow: none; }
+.btn-cv { box-shadow: none; }
+.btn-cv:hover { box-shadow: none; transform: translateY(-1px); }
+/* Main content is HTML-first for search engines and remains visible without JavaScript. */
+.fresh-section .reveal { opacity: 1; transform: none; }
+.fresh-section { padding-top: var(--section-space); padding-bottom: var(--section-space); scroll-margin-top: 76px; }
+.section-shell { width: min(100%, var(--content-width)); margin-inline: auto; }
+.section-heading { margin-bottom: clamp(28px, 4vw, 42px); }
+.section-heading h2 { letter-spacing: -.035em; }
+.section-heading p { max-width: 650px; line-height: 1.85; }
+.eyebrow { letter-spacing: .13em; }
+.eyebrow-dot { box-shadow: none; }
+.about-story, .education-stack, .capability-card, .toolkit-panel,
+.cert-card-new, .experience-card, .lab-card, .project-card-new {
+  box-shadow: none;
+}
+.about-story { border-radius: var(--card-radius); }
+.capability-card, .toolkit-panel, .cert-card-new, .experience-card, .lab-card,
+.project-card-new { border-radius: var(--card-radius); }
+.capability-card:hover, .cert-card-new:hover, .project-card-new:hover { transform: translateY(-2px); }
+.capability-card, .cert-card-new, .project-card-new { transition: border-color .18s ease, transform .18s ease; }
+.capability-card:hover, .cert-card-new:hover, .project-card-new:hover { border-color: rgba(0,198,255,.38); }
+.project-art { box-shadow: none; }
+.art-live i, .toolkit-status > span { box-shadow: none; }
+.contact-new { border-radius: var(--card-radius); box-shadow: none; background: #07101d; }
+.contact-grid-glow { opacity: .08; }
+.contact-primary { box-shadow: none; }
+.footer-new { padding-top: 8px; }
+.fresh-section a:focus-visible, .fresh-section summary:focus-visible,
+.navbar a:focus-visible, .nav-toggle:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+img { max-width: 100%; }
+@media (max-width: 1000px) {
+  .section-shell { width: 100%; }
+  .fresh-section { padding-left: 5.5%; padding-right: 5.5%; }
+}
+@media (max-width: 720px) {
+  .fresh-section { padding-top: 68px; padding-bottom: 68px; }
+  .section-heading h2 { letter-spacing: -.025em; }
+  .contact-new { border-radius: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fresh-section *, .fresh-section *::before, .fresh-section *::after,
+  .navbar *, .btn-cv { animation: none !important; transition: none !important; }
+}
+
+
+/* Plain, professional finish for the V2 content sections. Keep the original hero untouched. */
+:root {
+  --content-font: 'Poppins', sans-serif;
+  --card-radius: 8px;
+  --border-subtle: rgba(160, 185, 210, .13);
+}
+.fresh-section, .footer-new {
+  font-family: var(--content-font);
+  font-weight: 400;
+  letter-spacing: normal;
+}
+.fresh-section h2, .fresh-section h3, .fresh-section p,
+.fresh-section a, .fresh-section span, .fresh-section li,
+.footer-new, .footer-new a, .footer-new p {
+  font-family: var(--content-font);
+}
+.fresh-section .section-heading h2 {
+  letter-spacing: -.025em;
+  font-weight: 600;
+}
+.fresh-section .eyebrow {
+  letter-spacing: .08em;
+  font-weight: 600;
+}
+.fresh-section .about-story,
+.fresh-section .education-stack,
+.fresh-section .capability-card,
+.fresh-section .toolkit-panel,
+.fresh-section .cert-card-new,
+.fresh-section .experience-card,
+.fresh-section .lab-card,
+.fresh-section .project-card-new {
+  background: rgba(7, 14, 25, .94);
+  border-color: rgba(160, 185, 210, .14);
+  border-radius: var(--card-radius);
+}
+.fresh-section .about-story::after { display: none; }
+.fresh-section .capability-card:hover,
+.fresh-section .cert-card-new:hover,
+.fresh-section .project-card-new:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 198, 255, .32);
+  box-shadow: none;
+}
+.fresh-section .chip-cloud span,
+.fresh-section .tool-list span,
+.fresh-section .project-tech span,
+.fresh-section .lab-stack span,
+.fresh-section .experience-tags span,
+.fresh-section .focus-pills span {
+  border-radius: 4px;
+  background: transparent;
+  border-color: rgba(160, 185, 210, .16);
+  font-size: 11px;
+  padding: 5px 8px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.fresh-section .project-art,
+.fresh-section .lab-visual,
+.fresh-section .lab-visual-alt,
+.fresh-section .art-phish,
+.fresh-section .art-pass,
+.fresh-section .art-awareness {
+  background-color: #07101d;
+  background-image: none;
+}
+.fresh-section .project-art::before,
+.fresh-section .project-art::after { box-shadow: none; }
+.fresh-section .contact-new {
+  background: rgba(7, 14, 25, .96);
+  border-color: rgba(160, 185, 210, .18);
+  border-radius: var(--card-radius);
+}
+.fresh-section .contact-grid-glow { display: none; }
+.fresh-section .contact-primary { background: var(--primary); color: #06101b; border-radius: 4px; }
+.fresh-section .cert-symbol { border-radius: 6px; background: rgba(0, 198, 255, .07); }
+.fresh-section .project-label,
+.fresh-section .lab-type,
+.fresh-section .contact-side-label,
+.fresh-section .tool-label { letter-spacing: .06em; }
+.fresh-section .project-index,
+.fresh-section .education-index,
+.fresh-section .cap-number,
+.fresh-section .cert-count,
+.fresh-section .visual-index { display: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .fresh-section *, .fresh-section *::before, .fresh-section *::after { transition: none !important; animation: none !important; }
+}
+
+
+/* Interactive refinement: restrained hover, reversible scroll reveal, and optional image covers. */
+/* A single shared page background sits behind all post-hero sections. */
+body { position: relative; background: var(--bg-dark); }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 12% 14%, rgba(0, 114, 255, .075), transparent 34%),
+    radial-gradient(ellipse at 86% 62%, rgba(0, 198, 255, .045), transparent 31%),
+    #02050a;
+}
+.fresh-section.section-alt { background: transparent; }
+/* Use the same Poppins font throughout the page so local and deployed views match. */
+.fresh-section, .fresh-section *:not(i):not([class*="fa-"]), .footer-new, .footer-new *:not(i):not([class*="fa-"]) {
+  font-family: 'Poppins', sans-serif !important;
+}
+.fresh-section .section-heading h2,
+.fresh-section .about-story h3,
+.fresh-section .project-copy h3,
+.fresh-section .lab-content h3,
+.fresh-section .experience-title-row h3 { letter-spacing: -.025em; }
+/* Reveal both as a section enters and as it leaves the viewport. Without JS, content stays visible. */
+.fresh-section .fresh-reveal-pending { opacity: 0; transform: translateY(16px); transition: opacity .42s ease, transform .42s ease; }
+.fresh-section .fresh-reveal-pending.fresh-reveal-visible { opacity: 1; transform: translateY(0); }
+/* Keep the current V2 cards, with small hover feedback instead of strong glow effects. */
+.capability-card, .toolkit-panel, .cert-card-new, .experience-card, .lab-card, .project-card-new, .education-stack, .about-story {
+  transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
+}
+.capability-card:hover, .cert-card-new:hover, .lab-card:hover, .project-card-new:hover, .experience-card:hover, .about-story:hover, .education-stack:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 198, 255, .36);
+  box-shadow: none;
+}
+.chip-cloud span, .tool-list span, .project-tech span, .lab-stack span, .experience-tags span, .focus-pills span {
+  transition: color .16s ease, border-color .16s ease, background-color .16s ease;
+}
+.chip-cloud span:hover, .tool-list span:hover, .project-tech span:hover, .lab-stack span:hover, .experience-tags span:hover, .focus-pills span:hover {
+  color: #fff;
+  border-color: rgba(0, 198, 255, .42);
+  background: rgba(0, 198, 255, .075);
+}
+.toolkit-panel { background: rgba(5, 11, 21, .72); }
+.toolkit-title h3 { font-size: clamp(20px, 2.4vw, 27px); font-weight: 550; letter-spacing: -.02em; }
+.tool-label { font-size: 10px; letter-spacing: .08em; color: #b7c7d9; }
+/* Optional image cover for project preview panels. Add .has-cover to .project-art. */
+.project-art.has-cover { padding: 0; display: block; }
+.project-art .project-cover {
+  display: block; position: absolute; inset: 0; z-index: 2;
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  border-radius: inherit;
+}
+.project-art.has-cover > :not(.project-cover) { display: none !important; }
+/* Optional image for any content card: about, education, experience, labs, or skills. */
+.content-cover {
+  display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center;
+  margin: 0 0 20px; border: 1px solid var(--fresh-border); border-radius: 9px;
+}
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 2000; transform: translateY(-150%); padding: 10px 14px; background: #fff; color: #02050a; border-radius: 4px; }
+.skip-link:focus { transform: translateY(0); }
+@media (hover: none) {
+  .capability-card:hover, .cert-card-new:hover, .lab-card:hover, .project-card-new:hover, .experience-card:hover, .about-story:hover, .education-stack:hover { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fresh-section .fresh-reveal-pending { opacity: 1; transform: none; transition: none; }
+  .capability-card, .toolkit-panel, .cert-card-new, .experience-card, .lab-card, .project-card-new, .education-stack, .about-story,
+  .chip-cloud span, .tool-list span, .project-tech span, .lab-stack span, .experience-tags span, .focus-pills span { transition: none !important; }
+}
+
+/* Focused final adjustment: clearer skill/tool names and consistent, restrained hover feedback.
+   Scoped to the page content below the original hero so the intro remains untouched. */
+.fresh-section a,
+.navbar .nav-links a,
+.navbar .logo,
+.navbar .btn-cv,
+.fresh-section button,
+.fresh-section summary,
+.fresh-section .social-icon,
+.fresh-section .contact-row,
+.fresh-section .contact-primary,
+.fresh-section .project-link,
+.fresh-section .chip-cloud span,
+.fresh-section .tool-list span,
+.fresh-section .project-tech span,
+.fresh-section .lab-stack span,
+.fresh-section .experience-tags span,
+.fresh-section .focus-pills span,
+.fresh-section .capability-card,
+.fresh-section .toolkit-panel,
+.fresh-section .cert-card-new,
+.fresh-section .experience-card,
+.fresh-section .lab-card,
+.fresh-section .project-card-new,
+.fresh-section .education-stack,
+.fresh-section .about-story,
+.fresh-section .project-art img,
+.fresh-section .content-cover {
+  transition: color .18s ease, background-color .18s ease, border-color .18s ease,
+              transform .18s ease, opacity .18s ease, filter .18s ease;
+}
+
+/* Skill and tool names should be easy to scan without changing the overall design. */
+.fresh-section .chip-cloud span,
+.fresh-section .tool-list span {
+  color: #e1eaf4;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  padding: 7px 10px;
+  border-color: rgba(160, 185, 210, .23);
+}
+.fresh-section .tool-label {
+  color: #00c6ff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .055em;
+  line-height: 1.5;
+}
+.fresh-section .toolkit-title h3 { color: #f1f5f9; }
+.fresh-section .capability-card h3 { color: #f1f5f9; }
+.fresh-section .capability-card > p { color: #b9c7d7; }
+
+/* Consistent hover feedback for visible controls and content cards. */
+.navbar .nav-links a:hover,
+.navbar .logo:hover,
+.fresh-section a:hover,
+.fresh-section button:hover,
+.fresh-section summary:hover {
+  color: #fff;
+}
+.fresh-section .contact-row:hover,
+.fresh-section .social-icon:hover,
+.fresh-section .contact-primary:hover,
+.fresh-section .project-link:hover {
+  border-color: rgba(0, 198, 255, .55);
+}
+.fresh-section .capability-card:hover,
+.fresh-section .toolkit-panel:hover,
+.fresh-section .cert-card-new:hover,
+.fresh-section .experience-card:hover,
+.fresh-section .lab-card:hover,
+.fresh-section .project-card-new:hover,
+.fresh-section .education-stack:hover,
+.fresh-section .about-story:hover {
+  border-color: rgba(0, 198, 255, .4);
+}
+.fresh-section .chip-cloud span:hover,
+.fresh-section .tool-list span:hover {
+  color: #fff;
+  background: rgba(0, 198, 255, .11);
+  border-color: rgba(0, 198, 255, .55);
+}
+.fresh-section .project-art img:hover,
+.fresh-section .content-cover:hover {
+  filter: brightness(1.04);
+}
+.fresh-section .project-card-new:hover .project-art img { transform: scale(1.015); }
+.fresh-section a:focus-visible,
+.fresh-section button:focus-visible,
+.fresh-section summary:focus-visible,
+.navbar a:focus-visible,
+.navbar button:focus-visible {
+  outline: 2px solid #00c6ff;
+  outline-offset: 3px;
+}
+
+@media (hover: none) {
+  .fresh-section .project-card-new:hover .project-art img { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fresh-section a,
+  .fresh-section button,
+  .fresh-section summary,
+  .fresh-section .contact-row,
+  .fresh-section .contact-primary,
+  .fresh-section .project-link,
+  .fresh-section .chip-cloud span,
+  .fresh-section .tool-list span,
+  .fresh-section .project-tech span,
+  .fresh-section .lab-stack span,
+  .fresh-section .experience-tags span,
+  .fresh-section .focus-pills span,
+  .fresh-section .capability-card,
+  .fresh-section .toolkit-panel,
+  .fresh-section .cert-card-new,
+  .fresh-section .experience-card,
+  .fresh-section .lab-card,
+  .fresh-section .project-card-new,
+  .fresh-section .education-stack,
+  .fresh-section .about-story,
+  .fresh-section .project-art img,
+  .fresh-section .content-cover { transition: none !important; }
+}
+
+/* Skills and tools: clean text-first presentation, matching the existing cyan/blue theme. */
+.fresh-section .chip-cloud,
+.fresh-section .tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 7px 20px;
+}
+.fresh-section .chip-cloud span,
+.fresh-section .tool-list span {
+  position: relative;
+  display: inline-block;
+  padding: 4px 0 4px 13px;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #e3edf8;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+  transition: color .18s ease, transform .18s ease;
+}
+.fresh-section .chip-cloud span::before,
+.fresh-section .tool-list span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #00c6ff;
+  transform: translateY(-50%);
+  opacity: .8;
+  transition: opacity .18s ease, box-shadow .18s ease;
+}
+.fresh-section .chip-cloud span:hover,
+.fresh-section .tool-list span:hover {
+  color: #fff;
+  border: 0 !important;
+  background: transparent !important;
+  transform: translateX(2px);
+}
+.fresh-section .chip-cloud span:hover::before,
+.fresh-section .tool-list span:hover::before {
+  opacity: 1;
+  box-shadow: 0 0 7px rgba(0, 198, 255, .45);
+}
+@media (prefers-reduced-motion: reduce) {
+  .fresh-section .chip-cloud span,
+  .fresh-section .tool-list span,
+  .fresh-section .chip-cloud span::before,
+  .fresh-section .tool-list span::before { transition: none !important; }
+}
