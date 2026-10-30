@@ -404,3 +404,22 @@ body::before {
   .fresh-section .chip-cloud span::before,
   .fresh-section .tool-list span::before { transition: none !important; }
 }
+
+/* TryHackMe learning summary integrated into the existing Certifications section */
+.profile-link-line { margin-top: 14px; font-size: .92rem; }
+.profile-link-line a { color: var(--cyan, #00d9ff); font-weight: 600; }
+.profile-link-line a:hover { text-decoration: underline; }
+.thm-summary { margin: 22px 0 30px; padding: clamp(18px, 3vw, 30px); border: 1px solid var(--border, rgba(153,183,220,.15)); border-radius: var(--radius, 18px); background: linear-gradient(135deg, rgba(0,217,255,.075), rgba(14,22,39,.75)); }
+.thm-summary-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin-bottom: 20px; }
+.thm-summary-heading h3 { font-size: clamp(1.2rem, 2.4vw, 1.65rem); margin: 3px 0 6px; }
+.thm-summary-heading p { color: var(--muted, #9aa9c0); font-size: .88rem; max-width: 650px; }
+.thm-stats { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 10px; }
+.thm-stat { padding: 14px 10px; border: 1px solid var(--border, rgba(153,183,220,.15)); border-radius: 12px; background: rgba(8,13,25,.42); display: flex; flex-direction: column; gap: 4px; }
+.thm-stat strong { color: var(--cyan, #00d9ff); font-size: clamp(1.1rem, 2vw, 1.55rem); line-height: 1.2; }
+.thm-stat span { color: var(--muted, #9aa9c0); font-size: .76rem; line-height: 1.35; }
+.thm-badges-label { font-size: .78rem; text-transform: uppercase; letter-spacing: 1.2px; font-weight: 700; margin: 18px 0 9px; color: var(--muted, #9aa9c0); }
+.thm-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.thm-badges span { font-size: .78rem; padding: 6px 10px; border: 1px solid var(--border, rgba(153,183,220,.15)); border-radius: 999px; background: rgba(0,217,255,.06); }
+.project-note { margin-top: 10px; color: var(--muted, #9aa9c0); font-size: .82rem; }
+@media (max-width: 980px) { .thm-stats { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (max-width: 620px) { .thm-summary-heading { align-items: flex-start; flex-direction: column; } .thm-stats { grid-template-columns: repeat(2,minmax(0,1fr)); } }
